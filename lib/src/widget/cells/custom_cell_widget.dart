@@ -4,11 +4,13 @@ class CustomCellWidget extends DefaultCellWidget implements _TextBaseMixinImpl {
   final PlutoStateManager stateManager;
   final PlutoCell cell;
   final PlutoColumn column;
+  final int rowIdx;
 
   CustomCellWidget({
     this.stateManager,
     this.cell,
     this.column,
+    this.rowIdx,
   });
 
   @override
@@ -30,6 +32,6 @@ class _CustomCellWidgetState extends _DefaultCellWidgetState {
       ));
     }
     final type = widget.column.type as PlutoColumnTypeWidget;
-    return type.buildWidget(widget.cell.value);
+    return type.buildWidget(widget.cell.value, thisRow);
   }
 }

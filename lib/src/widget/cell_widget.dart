@@ -187,6 +187,7 @@ class _CellWidgetState extends State<CellWidget>
           stateManager: widget.stateManager,
           cell: widget.cell,
           column: widget.column,
+          rowIdx: widget.rowIdx,
         );
       } else {
         return DefaultCellWidget(
@@ -233,6 +234,7 @@ class _CellWidgetState extends State<CellWidget>
         stateManager: widget.stateManager,
         cell: widget.cell,
         column: widget.column,
+        rowIdx: widget.rowIdx,
       );
     }
 
