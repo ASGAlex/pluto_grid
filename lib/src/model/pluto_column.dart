@@ -224,7 +224,7 @@ abstract class PlutoColumnType {
 
   factory PlutoColumnType.widget(
       {dynamic defaultValue,
-      @required Widget Function(dynamic value) widget}) {
+      @required Widget Function(dynamic value, PlutoRow rowData) widget}) {
     return PlutoColumnTypeWidget(defaultValue: defaultValue, buildWidget: widget);
   }
 
@@ -465,7 +465,7 @@ class PlutoColumnTypeWidget implements PlutoColumnType {
   @override
   dynamic defaultValue;
 
-  final Widget Function(dynamic value) buildWidget;
+  final Widget Function(dynamic value, PlutoRow rowData) buildWidget;
 
   @override
   bool readOnly = true;

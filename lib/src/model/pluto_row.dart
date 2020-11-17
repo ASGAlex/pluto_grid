@@ -8,12 +8,16 @@ class PlutoRow {
   /// If there is no value, it is automatically set when loading the grid.
   int sortIdx;
 
+  dynamic _model;
+
   PlutoRow({
     @required this.cells,
     this.sortIdx,
     bool checked = false,
+    dynamic model
   })  : this._checked = checked,
-        this._key = UniqueKey();
+        this._key = UniqueKey(),
+        this._model = model;
 
   /// The state value that the checkbox is checked.
   /// If the enableRowChecked value of the [PlutoColumn] property is set to true,
@@ -29,4 +33,6 @@ class PlutoRow {
   Key get key => _key;
 
   Key _key;
+
+  dynamic get model => _model;
 }
